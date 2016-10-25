@@ -3580,6 +3580,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shadowResolution: 400
   innerSpotPercent: 0
+  shadowDimmer: 1
+  affectDiffuse: 1
+  affectSpecular: 1
 --- !u!1001 &116004686
 Prefab:
   m_ObjectHideFlags: 0
@@ -5231,6 +5234,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shadowResolution: 900
   innerSpotPercent: 20.1
+  shadowDimmer: 1
+  affectDiffuse: 1
+  affectSpecular: 1
 --- !u!1001 &184186620
 Prefab:
   m_ObjectHideFlags: 0
@@ -8234,6 +8240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shadowResolution: 400
   innerSpotPercent: 0
+  shadowDimmer: 1
+  affectDiffuse: 1
+  affectSpecular: 1
 --- !u!1 &296488275
 GameObject:
   m_ObjectHideFlags: 0
@@ -24495,6 +24504,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shadowResolution: 400
   innerSpotPercent: 0
+  shadowDimmer: 1
+  affectDiffuse: 1
+  affectSpecular: 1
 --- !u!1001 &830791057
 Prefab:
   m_ObjectHideFlags: 0
@@ -29404,6 +29416,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shadowResolution: 800
   innerSpotPercent: 0
+  shadowDimmer: 1
+  affectDiffuse: 1
+  affectSpecular: 1
 --- !u!1001 &994188637
 Prefab:
   m_ObjectHideFlags: 0
