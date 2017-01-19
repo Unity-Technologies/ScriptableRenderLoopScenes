@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 8
   m_Fog: 1
   m_FogColor: {r: 0.40000004, g: 0.42317787, b: 0.4431373, a: 0.6039216}
   m_FogMode: 2
@@ -25,6 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0, g: 0.59052944, b: 1, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 28d9841a7976e2144baffb1b6d98e720, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -41,7 +42,7 @@ RenderSettings:
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 7
+  serializedVersion: 9
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -53,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
-    serializedVersion: 4
+    serializedVersion: 6
     m_Resolution: 1
     m_BakeResolution: 1
     m_TextureWidth: 2048
@@ -67,14 +68,15 @@ LightmapSettings:
       type: 2}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 0
-    m_DirectLightInLightProbes: 1
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
+    m_StationaryBakeMode: 1
   m_LightingDataAsset: {fileID: 112000124, guid: 0f815666e91f6dd4881309451f1c5d44,
     type: 2}
   m_RuntimeCPUUsage: 100
+  m_ShadowMaskMode: 2
 --- !u!196 &5
 NavMeshSettings:
   serializedVersion: 2
@@ -91,6 +93,8 @@ NavMeshSettings:
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666666
+    manualTileSize: 0
+    tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1001 &1271120
@@ -522,6 +526,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &18162291
 BoxCollider:
@@ -736,7 +741,7 @@ GameObject:
   - component: {fileID: 25193576}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1251,7 +1256,7 @@ GameObject:
   - component: {fileID: 36207151}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2106,7 +2111,7 @@ GameObject:
   - component: {fileID: 72203889}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3527,7 +3532,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 114781285}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
@@ -3552,6 +3557,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_CCT: 6570
+  m_UseCCT: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &114781287
@@ -3579,10 +3586,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowResolution: 400
-  innerSpotPercent: 0
   shadowDimmer: 1
   affectDiffuse: 1
   affectSpecular: 1
+  archetype: 0
+  isDoubleSided: 0
+  areaLightLength: 0
+  areaLightWidth: 0
 --- !u!1001 &116004686
 Prefab:
   m_ObjectHideFlags: 0
@@ -5180,7 +5190,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 181841809}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.8198529, b: 0.6764706, a: 1}
   m_Intensity: 1.4887552
@@ -5205,6 +5215,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_CCT: 6570
+  m_UseCCT: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &181841811
@@ -5233,10 +5245,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowResolution: 900
-  innerSpotPercent: 20.1
   shadowDimmer: 1
   affectDiffuse: 1
   affectSpecular: 1
+  archetype: 0
+  isDoubleSided: 0
+  areaLightLength: 0
+  areaLightWidth: 0
 --- !u!1001 &184186620
 Prefab:
   m_ObjectHideFlags: 0
@@ -6550,7 +6565,7 @@ GameObject:
   - component: {fileID: 235586137}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8187,7 +8202,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 290532803}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
@@ -8212,6 +8227,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_CCT: 6570
+  m_UseCCT: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &290532805
@@ -8239,10 +8256,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowResolution: 400
-  innerSpotPercent: 0
   shadowDimmer: 1
   affectDiffuse: 1
   affectSpecular: 1
+  archetype: 0
+  isDoubleSided: 0
+  areaLightLength: 0
+  areaLightWidth: 0
 --- !u!1 &296488275
 GameObject:
   m_ObjectHideFlags: 0
@@ -14135,7 +14155,7 @@ GameObject:
   - component: {fileID: 486250223}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15102,7 +15122,7 @@ GameObject:
   - component: {fileID: 528860934}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16304,7 +16324,7 @@ GameObject:
   - component: {fileID: 568210851}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22383,6 +22403,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &769939437
 BoxCollider:
@@ -24451,7 +24472,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 824347039}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
@@ -24476,6 +24497,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_CCT: 6570
+  m_UseCCT: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &824347041
@@ -24503,10 +24526,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowResolution: 400
-  innerSpotPercent: 0
   shadowDimmer: 1
   affectDiffuse: 1
   affectSpecular: 1
+  archetype: 0
+  isDoubleSided: 0
+  areaLightLength: 0
+  areaLightWidth: 0
 --- !u!1001 &830791057
 Prefab:
   m_ObjectHideFlags: 0
@@ -24754,7 +24780,7 @@ GameObject:
   - component: {fileID: 839849582}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24852,6 +24878,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &842452490
 BoxCollider:
@@ -25519,7 +25546,7 @@ GameObject:
   - component: {fileID: 856156119}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26599,6 +26626,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &885271468
 BoxCollider:
@@ -28134,7 +28162,7 @@ GameObject:
   - component: {fileID: 957188256}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29363,7 +29391,7 @@ Light:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 991787236}
   m_Enabled: 1
-  serializedVersion: 7
+  serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
@@ -29388,6 +29416,8 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_CCT: 6570
+  m_UseCCT: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &991787238
@@ -29415,10 +29445,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shadowResolution: 800
-  innerSpotPercent: 0
   shadowDimmer: 1
   affectDiffuse: 1
   affectSpecular: 1
+  archetype: 0
+  isDoubleSided: 0
+  areaLightLength: 0
+  areaLightWidth: 0
 --- !u!1001 &994188637
 Prefab:
   m_ObjectHideFlags: 0
@@ -33516,7 +33549,7 @@ GameObject:
   - component: {fileID: 1128288009}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44148,7 +44181,7 @@ GameObject:
   - component: {fileID: 1575337814}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44605,7 +44638,7 @@ GameObject:
   - component: {fileID: 1593540981}
   m_Layer: 8
   m_Name: Reflection Probe mountains
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45383,6 +45416,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1621058039
 BoxCollider:
@@ -45822,7 +45856,7 @@ GameObject:
   - component: {fileID: 1641186187}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46087,7 +46121,7 @@ GameObject:
   - component: {fileID: 1664299147}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46504,6 +46538,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1676726284
 BoxCollider:
@@ -46585,6 +46620,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1677772388
 BoxCollider:
@@ -47818,7 +47854,7 @@ GameObject:
   - component: {fileID: 1725439695}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48251,7 +48287,7 @@ GameObject:
   - component: {fileID: 1737695693}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50188,6 +50224,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1822724467
 BoxCollider:
@@ -50955,7 +50992,7 @@ GameObject:
   - component: {fileID: 1841592783}
   m_Layer: 8
   m_Name: Reflection Probe Terrain
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52002,6 +52039,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!65 &1886232223
 BoxCollider:
@@ -53184,7 +53222,7 @@ GameObject:
   - component: {fileID: 1917282853}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53525,7 +53563,7 @@ GameObject:
   - component: {fileID: 1937135476}
   m_Layer: 8
   m_Name: Reflection Probe
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
