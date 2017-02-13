@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad5bf4f8e45bdd1429eadc3445df2c89, type: 3}
-  m_Name: FPTL
+  m_Name: FPTLRenderPipeline
   m_EditorClassIdentifier: 
   m_ShadowSettings:
     enabled: 1
